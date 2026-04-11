@@ -1,0 +1,32 @@
+dashboard.html<!DOCTYPE html>
+<html>
+<head>
+<title>Lead Dashboard</title>
+<style>
+body{font-family:Arial;padding:20px;}
+table{width:100%;border-collapse:collapse;}
+th,td{border:1px solid #ccc;padding:10px;}
+</style>
+</head>
+
+<body>
+
+<h2>📊 LIC Lead Dashboard</h2>
+
+<table id="table">
+<tr><th>Name</th><th>Phone</th></tr>
+</table>
+
+<script>
+let leads=JSON.parse(localStorage.getItem("leads"))||[];
+let table=document.getElementById("table");
+
+leads.forEach(l=>{
+let row=table.insertRow();
+row.insertCell(0).innerHTML=l.name;
+row.insertCell(1).innerHTML=l.phone;
+});
+</script>
+
+</body>
+</html>
