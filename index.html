@@ -1,46 +1,360 @@
-<div class="hero-content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Plus | LIC Recruitment Centre</title>
 
-<!-- PROFILE CARD -->
-<div style="
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
+
+body{
+background:linear-gradient(135deg,#2a0055,#5a189a,#7b2cbf);
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND WATERMARK */
+body::before{
+content:"";
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+background-size:cover;
+opacity:0.07;
+z-index:-1;
+}
+
+/* NAV */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 20px;
+z-index:1000;
+}
+
+/* NAV LINKS */
+nav a{
+color:white;
+margin:8px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+position:relative;
+padding:20px;
+}
+
+/* HERO VIDEO */
+.hero video{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+object-fit:cover;
+z-index:-2;
+opacity:0.35;
+}
+
+/* PROFILE CARD */
+.profile{
 background:rgba(255,255,255,0.12);
 backdrop-filter:blur(15px);
 padding:25px;
 border-radius:20px;
-display:inline-block;
 border:1px solid rgba(255,255,255,0.2);
 margin-bottom:20px;
-">
+}
 
-<img src="niranjan.jpg" style="
+.profile img{
 width:120px;
 height:120px;
 border-radius:50%;
-border:3px solid #ffd700;
+border:3px solid gold;
 object-fit:cover;
-">
+}
 
-<h2 style="margin-top:10px;">👨‍💼 Niranjan Sahu</h2>
+.profile h2{margin-top:10px;}
 
-<p style="margin-top:5px;">
-Senior Business Associate (LIC)
-</p>
-
-<a href="tel:7978222099" style="
-display:inline-block;
-margin-top:10px;
+.profile a{
 color:#ffd700;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* BUTTON */
+.btn{
+background:#ffd700;
+color:black;
+padding:12px 25px;
+border-radius:30px;
 font-weight:bold;
 text-decoration:none;
-">
-📞 7978222099
-</a>
+display:inline-block;
+margin-top:20px;
+transition:0.3s;
+}
 
+.btn:hover{transform:scale(1.1);}
+
+/* SECTION */
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.2);
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{transform:translateY(-10px);}
+
+/* FORM */
+form{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+max-width:420px;
+margin:auto;
+padding:25px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+color:white;
+}
+
+/* STICKY BUTTON */
+.sticky{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#ffd700;
+color:black;
+padding:12px 18px;
+border-radius:30px;
+font-weight:bold;
+z-index:9999;
+text-decoration:none;
+}
+
+/* LANGUAGE */
+.lang{
+position:fixed;
+top:80px;
+right:10px;
+z-index:9999;
+background:rgba(0,0,0,0.3);
+padding:10px;
+border-radius:10px;
+backdrop-filter:blur(10px);
+}
+
+.lang button{
+margin:3px;
+padding:6px 10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:rgba(0,0,0,0.3);
+text-align:center;
+padding:20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANGUAGE -->
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('hi')">HI</button>
+<button onclick="setLang('od')">OD</button>
 </div>
 
-<!-- MAIN TEXT -->
-<h1>Build Your Career with LIC</h1>
-<p>Agent • RCA • Bima Sakhi Recruitment Portal</p>
+<!-- STICKY APPLY -->
+<a href="#apply" class="sticky">🚀 Apply Now</a>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/917978222099">💬</a>
+
+<!-- NAV -->
+<header>
+<h3>Life Plus</h3>
+<nav>
+<a href="#about">About</a>
+<a href="#opp">Opportunities</a>
+<a href="#apply">Apply</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+<video autoplay muted loop>
+<source src="https://cdn.pixabay.com/video/2023/03/27/156509-813497669_large.mp4">
+</video>
+
+<div class="profile">
+<img src="niranjan.jpg">
+<h2>👨‍💼 Niranjan Sahu</h2>
+<p>Senior Business Associate (LIC)</p>
+<a href="tel:7978222099">📞 7978222099</a>
+</div>
+
+<h1 id="title">Build Your Career with LIC</h1>
+<p id="subtitle">Agent • RCA • Bima Sakhi Recruitment Portal</p>
 
 <a href="#apply" class="btn">Apply Now</a>
 
+</section>
+
+<!-- TRUST -->
+<section>
+<div class="grid">
+<div class="card">👨‍💼 13+ Years Experience</div>
+<div class="card">👥 100+ Agents Team</div>
+<div class="card">🏆 LIC Trusted Guidance</div>
 </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<section id="opp">
+<h2>💼 Opportunities</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>LIC Agent</h3>
+<p>Unlimited income & lifetime commission.</p>
+</div>
+
+<div class="card">
+<h3>RCA</h3>
+<p>Rural career growth opportunity.</p>
+</div>
+
+<div class="card">
+<h3>Bima Sakhi</h3>
+<p>Women empowerment program.</p>
+</div>
+
+</div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+<h2>📩 Apply Now</h2>
+
+<form onsubmit="sendLead(); return false;">
+<input type="text" id="name" placeholder="Name" required>
+<input type="text" id="phone" placeholder="Phone" required>
+
+<select id="role">
+<option>LIC Agent</option>
+<option>RCA</option>
+<option>Bima Sakhi</option>
+</select>
+
+<button class="btn">Submit</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>Life Plus Recruitment | 7978222099</p>
+</footer>
+
+<script>
+
+/* LEAD */
+function sendLead(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let role=document.getElementById("role").value;
+
+let msg="New Lead:%0AName:"+name+"%0APhone:"+phone+"%0ARole:"+role;
+
+window.open("https://wa.me/917978222099?text="+msg);
+alert("Submitted Successfully");
+}
+
+/* MULTI LANGUAGE */
+function setLang(lang){
+
+if(lang==="hi"){
+document.getElementById("title").innerText="LIC के साथ अपना करियर बनाएं";
+document.getElementById("subtitle").innerText="एजेंट • RCA • बीमा सखी भर्ती";
+}
+
+if(lang==="od"){
+document.getElementById("title").innerText="LIC ସହିତ ଆପଣଙ୍କ କ୍ୟାରିୟର ଗଢ଼ନ୍ତୁ";
+document.getElementById("subtitle").innerText="ଏଜେଣ୍ଟ • RCA • ବୀମା ସଖୀ";
+}
+
+if(lang==="en"){
+location.reload();
+}
+}
+
+</script>
+
+</body>
+</html>
