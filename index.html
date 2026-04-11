@@ -3,114 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Plus Recruitment</title>
+<title>Life Plus | LIC Recruitment</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
 
 body{
-font-family:Segoe UI, sans-serif;
-background:#f0f4ff;
-color:#333;
+background:#f5f8ff;
+overflow-x:hidden;
 }
 
-/* HEADER */
+/* NAV */
 header{
-background:linear-gradient(90deg,#002f6c,#0056b3);
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,47,108,0.9);
+backdrop-filter:blur(10px);
 color:white;
-padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
-}
-
-header h2{font-size:18px;}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+padding:12px 20px;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:8px 10px;
+margin:8px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
 font-size:14px;
 }
-nav a:hover{color:#ffd700;}
 
-/* HERO */
+/* HERO VIDEO */
 .hero{
-background:linear-gradient(135deg,#003366,#0073e6);
-color:white;
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:100px 20px;
+color:white;
+overflow:hidden;
 }
 
-.hero h1{font-size:40px;}
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+.overlay{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+z-index:0;
+}
+
+.hero-content{
+z-index:1;
+animation:fadeIn 2s ease-in-out;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+opacity:0.9;
+}
 
 .btn{
+margin-top:20px;
 background:#ffd700;
 padding:12px 25px;
-border-radius:6px;
-color:black;
-font-weight:bold;
+border-radius:30px;
 text-decoration:none;
+color:#000;
+font-weight:bold;
 display:inline-block;
-margin-top:15px;
+transition:0.3s;
 }
 
+.btn:hover{transform:scale(1.1);}
+
 /* SECTION */
-.section{
-padding:70px 20px;
+section{
+padding:80px 20px;
 text-align:center;
 }
 
-/* GRID FIX */
-.cards{
+h2{
+color:#002f6c;
+margin-bottom:20px;
+}
+
+/* CARDS */
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 }
 
 .card{
-background:linear-gradient(135deg,#ffffff,#e6f0ff);
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(10px);
 padding:25px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 transition:0.3s;
-text-align:left;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
-/* PROFILE */
-.profile{
-width:150px;
-height:150px;
-border-radius:50%;
-margin-top:20px;
-border:4px solid #0073e6;
+/* LANGUAGE BUTTON */
+.lang{
+position:fixed;
+bottom:90px;
+right:20px;
+z-index:2000;
 }
 
-/* DASHBOARD */
-.dashboard{
-background:linear-gradient(135deg,#dbe9ff,#f0f6ff);
-}
-
-/* FOOTER */
-footer{
+.lang button{
+margin:5px;
+padding:8px 12px;
+border:none;
+border-radius:6px;
+cursor:pointer;
 background:#002f6c;
 color:white;
-padding:20px;
-text-align:center;
 }
 
 /* WHATSAPP */
@@ -125,133 +158,166 @@ border-radius:50%;
 font-size:20px;
 text-decoration:none;
 }
+
+/* FORM */
+form{
+background:white;
+max-width:420px;
+margin:auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+/* FOOTER */
+footer{
+background:#002f6c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-20px);}
+to{opacity:1;transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <header>
-<h2>Life Plus</h2>
+<h3>Life Plus</h3>
 <nav>
-<a href="#about">About</a>
-<a href="#agent">Agent</a>
-<a href="#bima">Bima Sakhi</a>
-<a href="#benefits">Benefits</a>
-<a href="#testimonials">Reviews</a>
-<a href="#dashboard">Dashboard</a>
+<a href="#about" id="nav1">About</a>
+<a href="#opp" id="nav2">Opportunities</a>
+<a href="#apply" id="nav3">Apply</a>
 </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO VIDEO -->
 <section class="hero">
-<h1>Build Your Career with LIC</h1>
-<p>Agent Recruitment & Bima Sakhi Empowerment Centre</p>
-<a href="#apply" class="btn">Apply Now</a>
+
+<video autoplay muted loop>
+<source src="https://cdn.pixabay.com/video/2023/03/27/156509-813497669_large.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+<h1 id="title">Build Your Career with LIC</h1>
+<p id="subtitle">Agent • RCA • Bima Sakhi Recruitment Portal</p>
+<a href="#apply" class="btn" id="btn">Apply Now</a>
+</div>
+
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
-<h2>👨‍💼 Niranjan Sahu</h2>
-<img src="niranjan.jpg" class="profile">
-
-<p style="max-width:800px;margin:auto;margin-top:20px;">
-Senior Business Associate (LIC) with 13+ years experience and 100+ agents team.
-Providing full training, guidance and career support.
+<section id="about">
+<h2>👨‍💼 About</h2>
+<p id="aboutText" style="max-width:800px;margin:auto;">
+Senior Business Associate in LIC with 13+ years experience and 100+ agents team.
 </p>
 </section>
 
-<!-- BENEFITS -->
-<section id="benefits" class="section">
-<h2>🔥 Advantages</h2>
+<!-- OPPORTUNITIES -->
+<section id="opp">
+<h2>💼 Opportunities</h2>
 
-<div class="cards">
+<div class="grid">
 
-<div class="card">
-<h3>💼 LIC Agent Benefits</h3>
-<ul>
-<li>✔ Unlimited Income</li>
-<li>✔ Lifetime Renewal Commission</li>
-<li>✔ Flexible Work</li>
-<li>✔ No Investment Required</li>
-<li>✔ Trusted LIC Brand</li>
-</ul>
+<div class="card" id="c1">
+<h3>LIC Agent</h3>
+<p>Unlimited income & lifetime commission.</p>
 </div>
 
-<div class="card">
-<h3>👩‍💼 Bima Sakhi Benefits</h3>
-<ul>
-<li>✔ Women Empowerment</li>
-<li>✔ Work From Home</li>
-<li>✔ Training Provided</li>
-<li>✔ Monthly Income + Commission</li>
-<li>✔ Financial Independence</li>
-</ul>
+<div class="card" id="c2">
+<h3>RCA</h3>
+<p>Rural career growth opportunity.</p>
 </div>
 
+<div class="card" id="c3">
+<h3>Bima Sakhi</h3>
+<p>Women empowerment program.</p>
 </div>
-</section>
 
-<!-- AGENT -->
-<section id="agent" class="section">
-<h2>👨‍💼 LIC Agent Recruitment</h2>
-<p>Start your career and earn unlimited income.</p>
-<a href="https://wa.me/917978222099" class="btn">Apply for Agent</a>
-</section>
-
-<!-- BIMA -->
-<section id="bima" class="section">
-<h2>👩‍💼 Bima Sakhi Recruitment</h2>
-<p>Special opportunity for women empowerment.</p>
-<a href="https://wa.me/917978222099" class="btn">Apply for Bima Sakhi</a>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section">
-<h2>🌟 Testimonials</h2>
-
-<div class="cards">
-<div class="card">“Great guidance and support.”</div>
-<div class="card">“Best LIC career opportunity.”</div>
-<div class="card">“Life changed after joining.”</div>
-</div>
-</section>
-
-<!-- DASHBOARD -->
-<section id="dashboard" class="section dashboard">
-<h2>📊 Dashboard</h2>
-
-<div class="cards">
-<div class="card"><h3>Agents</h3><h2>100+</h2></div>
-<div class="card"><h3>Bima Sakhi</h3><h2>Active</h2></div>
-<div class="card"><h3>Leads</h3><h2>Growing</h2></div>
-<div class="card"><h3>Status</h3><h2>High</h2></div>
 </div>
 </section>
 
 <!-- APPLY -->
-<section id="apply" class="section">
+<section id="apply">
 <h2>📩 Apply Now</h2>
 
 <form onsubmit="sendLead(); return false;">
-<input type="text" id="name" placeholder="Name" required><br><br>
-<input type="text" id="phone" placeholder="Mobile" required><br><br>
+<input type="text" id="name" placeholder="Name" required>
+<input type="text" id="phone" placeholder="Phone" required>
+
+<select id="role">
+<option>LIC Agent</option>
+<option>RCA</option>
+<option>Bima Sakhi</option>
+</select>
+
 <button class="btn">Submit</button>
 </form>
 </section>
 
+<!-- LANGUAGE -->
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('hi')">HI</button>
+<button onclick="setLang('od')">OD</button>
+</div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/917978222099">💬</a>
+
+<!-- FOOTER -->
 <footer>
-<p>📍 Berhampur | 📞 7978222099</p>
+<p>Life Plus Recruitment | 7978222099</p>
 </footer>
 
-<a href="https://wa.me/917978222099" class="whatsapp">💬</a>
-
 <script>
+
+/* LEAD */
 function sendLead(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
+let role=document.getElementById("role").value;
 
-window.open("https://wa.me/917978222099?text=Lead:%0aName:"+name+"%0aPhone:"+phone);
+let msg="New Lead:%0AName:"+name+"%0APhone:"+phone+"%0ARole:"+role;
+
+window.open("https://wa.me/917978222099?text="+msg);
 alert("Submitted Successfully");
+}
+
+/* MULTI LANGUAGE */
+function setLang(lang){
+
+if(lang==='hi'){
+document.getElementById("title").innerText="LIC के साथ अपना करियर बनाएं";
+document.getElementById("subtitle").innerText="एजेंट • RCA • बीमा सखी भर्ती";
+document.getElementById("btn").innerText="अभी आवेदन करें";
+}
+
+if(lang==='od'){
+document.getElementById("title").innerText="LIC ସହିତ ଆପଣଙ୍କ କ୍ୟାରିୟର ଗଢ଼ନ୍ତୁ";
+document.getElementById("subtitle").innerText="ଏଜେଣ୍ଟ • RCA • ବୀମା ସଖୀ";
+document.getElementById("btn").innerText="ଆବେଦନ କରନ୍ତୁ";
+}
+
+if(lang==='en'){
+location.reload();
+}
 }
 </script>
 
