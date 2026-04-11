@@ -3,58 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Plus | LIC Recruitment Centre</title>
+<title>Life Plus Recruitment</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f4f6f9;}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Segoe UI, sans-serif;
+background:#f0f4ff;
+color:#333;
+}
 
 /* HEADER */
 header{
-background:#002f6c;color:white;padding:15px;
-display:flex;justify-content:space-between;flex-wrap:wrap;
+background:linear-gradient(90deg,#002f6c,#0056b3);
+color:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+header h2{font-size:18px;}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 nav a{
-color:white;margin:10px;text-decoration:none;font-weight:bold;
+color:white;
+margin:8px 10px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
 }
-nav a:hover{color:#ffcc00;}
+nav a:hover{color:#ffd700;}
 
-/* HERO WITH MARKETING TEAM IMAGE */
+/* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1556740758-90de374c12ad');
-background-size:cover;
-color:white;text-align:center;padding:100px 20px;
+background:linear-gradient(135deg,#003366,#0073e6);
+color:white;
+text-align:center;
+padding:100px 20px;
 }
 
 .hero h1{font-size:40px;}
 
 .btn{
-background:#ffcc00;padding:12px 25px;
-text-decoration:none;color:black;font-weight:bold;
-border-radius:6px;display:inline-block;margin-top:10px;
+background:#ffd700;
+padding:12px 25px;
+border-radius:6px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
 }
 
 /* SECTION */
-.section{padding:60px 20px;text-align:center;}
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
+.section{
+padding:70px 20px;
+text-align:center;
+}
+
+/* GRID FIX */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
 
 .card{
-background:white;padding:20px;width:260px;border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+background:linear-gradient(135deg,#ffffff,#e6f0ff);
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
 text-align:left;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* PROFILE */
+.profile{
+width:150px;
+height:150px;
+border-radius:50%;
+margin-top:20px;
+border:4px solid #0073e6;
+}
+
+/* DASHBOARD */
+.dashboard{
+background:linear-gradient(135deg,#dbe9ff,#f0f6ff);
 }
 
 /* FOOTER */
 footer{
-background:#002f6c;color:white;text-align:center;padding:20px;
+background:#002f6c;
+color:white;
+padding:20px;
+text-align:center;
 }
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;background:green;
-color:white;padding:15px;border-radius:50%;text-decoration:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
 font-size:20px;
+text-decoration:none;
 }
 </style>
 </head>
@@ -62,7 +131,7 @@ font-size:20px;
 <body>
 
 <header>
-<h2>Life Plus Recruitment</h2>
+<h2>Life Plus</h2>
 <nav>
 <a href="#about">About</a>
 <a href="#agent">Agent</a>
@@ -75,28 +144,20 @@ font-size:20px;
 
 <!-- HERO -->
 <section class="hero">
-<h1>Join LIC & Build Your Future</h1>
-<p>Agent Recruitment & Bima Sakhi Centre</p>
+<h1>Build Your Career with LIC</h1>
+<p>Agent Recruitment & Bima Sakhi Empowerment Centre</p>
 <a href="#apply" class="btn">Apply Now</a>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section" style="background:white;">
-<h2>👨‍💼 About Niranjan Sahu</h2>
+<section id="about" class="section">
+<h2>👨‍💼 Niranjan Sahu</h2>
+<img src="niranjan.jpg" class="profile">
 
-<img src="niranjan.jpg" style="width:150px;height:150px;border-radius:50%;margin-top:20px;">
-
-<p style="max-width:900px;margin:auto;margin-top:20px;">
-Senior Business Associate in LIC with 13+ years experience.
-Leading 100+ agents team and providing full training and support.
+<p style="max-width:800px;margin:auto;margin-top:20px;">
+Senior Business Associate (LIC) with 13+ years experience and 100+ agents team.
+Providing full training, guidance and career support.
 </p>
-
-<div class="cards">
-<div class="card">✔ 13+ Years Experience</div>
-<div class="card">✔ 100+ Agents</div>
-<div class="card">✔ Leadership Skills</div>
-<div class="card">✔ Training Support</div>
-</div>
 </section>
 
 <!-- BENEFITS -->
@@ -106,22 +167,24 @@ Leading 100+ agents team and providing full training and support.
 <div class="cards">
 
 <div class="card">
-<h3>💼 LIC Agent</h3>
+<h3>💼 LIC Agent Benefits</h3>
 <ul>
-<li>Unlimited Income</li>
-<li>Renewal Commission</li>
-<li>Flexible Work</li>
-<li>Trusted LIC Brand</li>
+<li>✔ Unlimited Income</li>
+<li>✔ Lifetime Renewal Commission</li>
+<li>✔ Flexible Work</li>
+<li>✔ No Investment Required</li>
+<li>✔ Trusted LIC Brand</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>👩‍💼 Bima Sakhi</h3>
+<h3>👩‍💼 Bima Sakhi Benefits</h3>
 <ul>
-<li>Women Empowerment</li>
-<li>Work From Home</li>
-<li>No Experience Required</li>
-<li>Financial Independence</li>
+<li>✔ Women Empowerment</li>
+<li>✔ Work From Home</li>
+<li>✔ Training Provided</li>
+<li>✔ Monthly Income + Commission</li>
+<li>✔ Financial Independence</li>
 </ul>
 </div>
 
@@ -129,9 +192,9 @@ Leading 100+ agents team and providing full training and support.
 </section>
 
 <!-- AGENT -->
-<section id="agent" class="section" style="background:white;">
+<section id="agent" class="section">
 <h2>👨‍💼 LIC Agent Recruitment</h2>
-<p>Start earning unlimited income with LIC.</p>
+<p>Start your career and earn unlimited income.</p>
 <a href="https://wa.me/917978222099" class="btn">Apply for Agent</a>
 </section>
 
@@ -143,25 +206,25 @@ Leading 100+ agents team and providing full training and support.
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="section" style="background:white;">
+<section id="testimonials" class="section">
 <h2>🌟 Testimonials</h2>
 
 <div class="cards">
-<div class="card">“Great support and guidance.”</div>
+<div class="card">“Great guidance and support.”</div>
 <div class="card">“Best LIC career opportunity.”</div>
 <div class="card">“Life changed after joining.”</div>
 </div>
 </section>
 
 <!-- DASHBOARD -->
-<section id="dashboard" class="section" style="background:#eef3ff;">
+<section id="dashboard" class="section dashboard">
 <h2>📊 Dashboard</h2>
 
 <div class="cards">
-<div class="card"><h3>Agents</h3><h1>100+</h1></div>
-<div class="card"><h3>Bima Sakhi</h3><h1>Active</h1></div>
-<div class="card"><h3>Leads</h3><h1>Growing</h1></div>
-<div class="card"><h3>Status</h3><h1>High</h1></div>
+<div class="card"><h3>Agents</h3><h2>100+</h2></div>
+<div class="card"><h3>Bima Sakhi</h3><h2>Active</h2></div>
+<div class="card"><h3>Leads</h3><h2>Growing</h2></div>
+<div class="card"><h3>Status</h3><h2>High</h2></div>
 </div>
 </section>
 
@@ -170,15 +233,14 @@ Leading 100+ agents team and providing full training and support.
 <h2>📩 Apply Now</h2>
 
 <form onsubmit="sendLead(); return false;">
-<input type="text" id="name" placeholder="Your Name" required><br><br>
-<input type="text" id="phone" placeholder="Mobile Number" required><br><br>
+<input type="text" id="name" placeholder="Name" required><br><br>
+<input type="text" id="phone" placeholder="Mobile" required><br><br>
 <button class="btn">Submit</button>
 </form>
 </section>
 
 <footer>
-<p>📍 Life Plus Office, Berhampur</p>
-<p>📞 7978222099</p>
+<p>📍 Berhampur | 📞 7978222099</p>
 </footer>
 
 <a href="https://wa.me/917978222099" class="whatsapp">💬</a>
@@ -188,10 +250,8 @@ function sendLead(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
 
-let msg="New Lead:%0aName:"+name+"%0aPhone:"+phone;
-window.open("https://wa.me/917978222099?text="+msg);
-
-alert("Submitted Successfully!");
+window.open("https://wa.me/917978222099?text=Lead:%0aName:"+name+"%0aPhone:"+phone);
+alert("Submitted Successfully");
 }
 </script>
 
