@@ -3,224 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LifePlus LIC Recruitment</title>
+<title>LifePlus LIC Career Opportunity</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(-45deg, #6a0dad, #b266ff, #4b0082);
-    color:white;
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(-45deg,#6a0dad,#b266ff,#4b0082);
+color:white;
 }
 
 /* WATERMARK */
-body::before {
-    content:"";
-    position:fixed;
-    top:50%;
-    left:50%;
-    width:300px;
-    height:300px;
-    background:url('images/lic-logo.png') no-repeat center;
-    background-size:contain;
-    opacity:0.08;
-    transform:translate(-50%, -50%);
+body::before{
+content:"";
+position:fixed;
+top:50%;
+left:50%;
+width:320px;
+height:320px;
+background:url('images/lic-logo.png') no-repeat center;
+background-size:contain;
+opacity:0.08;
+transform:translate(-50%,-50%);
+z-index:0;
 }
 
 /* TOP BAR */
-.topbar {
-    background:yellow;
-    color:black;
-    text-align:center;
-    padding:10px;
-    font-weight:bold;
+.topbar{
+background:yellow;
+color:black;
+text-align:center;
+padding:10px;
+font-weight:bold;
+position:relative;
+z-index:2;
 }
 
-/* BANNER */
-.banner {
-    text-align:center;
-    padding:30px;
-}
-.banner img {
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    border:5px solid white;
+/* HERO */
+.hero{
+text-align:center;
+padding:30px;
+position:relative;
+z-index:2;
 }
 
-/* SECTION */
-.section {
-    padding:30px;
-    text-align:center;
+.hero img{
+width:160px;
+height:160px;
+border-radius:50%;
+border:5px solid white;
 }
 
-/* CARD */
-.card {
-    display:inline-block;
-    background:rgba(255,255,255,0.1);
-    padding:20px;
-    margin:10px;
-    border-radius:15px;
+.hero h1{margin:10px 0;}
+
+/* SECTIONS */
+.section{
+padding:30px;
+text-align:center;
+position:relative;
+z-index:2;
 }
 
-/* COUNTER */
-.counter {
-    font-size:40px;
-    font-weight:bold;
+/* CARDS */
+.card{
+display:inline-block;
+background:rgba(255,255,255,0.12);
+padding:18px;
+margin:10px;
+border-radius:15px;
+width:220px;
 }
 
 /* BUTTON */
-.btn {
-    background:white;
-    color:purple;
-    padding:12px 20px;
-    border:none;
-    border-radius:20px;
-    cursor:pointer;
-}
-
-/* FORM */
-input, textarea {
-    width:80%;
-    padding:10px;
-    margin:10px;
-    border-radius:5px;
-    border:none;
+.btn{
+background:white;
+color:purple;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
 }
 
 /* FLOATING WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:22px;
-    text-decoration:none;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+z-index:5;
 }
 
 /* QR */
-.qr {
-    width:120px;
-    margin-top:10px;
+.qr{
+width:120px;
+margin-top:10px;
 }
 
-footer {
-    background:#2e0057;
-    padding:20px;
-    text-align:center;
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#2e0057;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-🚀 Join LIC Today | Unlimited Income Opportunity
+<div class="topbar" id="topbar">
+🚀 Join LIC Career | Work Part-Time / Full-Time / Work From Home / Field
 </div>
 
-<div class="banner">
-    <img id="preview" src="images/myphoto.jpg">
-    <h1 id="nameTitle">Niranjan Sahu</h1>
-    <p>Senior Business Associate (LIC)</p>
-    <p>📞 7978222099</p>
-
-    <input type="file" onchange="loadPhoto(event)" class="btn">
+<!-- HERO -->
+<div class="hero">
+<img src="images/myphoto.jpg">
+<h1 id="name">Niranjan Sahu</h1>
+<p id="role">Senior Business Associate (LIC)</p>
+<p>📞 7978222099</p>
 </div>
 
-<!-- COUNTERS -->
+<!-- OPTIONS -->
 <div class="section">
-    <div class="card">
-        <div id="agents" class="counter">0</div>
-        <p id="agentsText">Active Agents</p>
-    </div>
-    <div class="card">
-        <div id="exp" class="counter">0</div>
-        <p id="expText">Years Experience</p>
-    </div>
+<h2 id="title1">Career Opportunities</h2>
+
+<div class="card">🏡 Rural Agents</div>
+<div class="card">🏙️ City Agents</div>
+<div class="card">👩‍💼 Bima Sakhi</div>
+<div class="card">🏆 MDRT Aspirants</div>
 </div>
 
-<!-- WHY JOIN -->
+<!-- WORK OPTIONS -->
 <div class="section">
-    <h2 id="why">Why Join LIC?</h2>
-    <div class="card">💰 Unlimited Income</div>
-    <div class="card">⏰ Flexible Work</div>
-    <div class="card">📈 High Growth</div>
-    <div class="card">🔒 Secure Future</div>
+<h2 id="title2">Work Flexibility</h2>
+
+<div class="card">Part Time Work</div>
+<div class="card">Full Time Career</div>
+<div class="card">Work From Home</div>
+<div class="card">Field Work</div>
+</div>
+
+<!-- BENEFITS -->
+<div class="section">
+<h2 id="title3">Benefits (As per LIC Rules)</h2>
+
+<div class="card">💰 Unlimited Income Opportunity</div>
+<div class="card">📈 Growth Based Commission</div>
+<div class="card">🎓 Training & Development</div>
+<div class="card">🏥 Group Insurance / Mediclaim (Eligibility)</div>
+<div class="card">🎉 Festival & Advance Facilities (As applicable)</div>
+<div class="card">🚗 Loan Facilities (Car/Bike/Housing - Eligibility)</div>
+<div class="card">🏆 MDRT Recognition Opportunity</div>
+<div class="card">👨‍👩‍👧 Social Status Growth</div>
+<div class="card">💼 Hereditary Commission (As per rules)</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2 id="title4">About LIC Career</h2>
+<p>
+A powerful career opportunity with <b>LIC of India</b> for individuals who want
+financial independence, flexible working, and long-term growth.
+</p>
 </div>
 
 <!-- APPLY -->
 <div class="section">
-    <h2 id="apply">Apply Now</h2>
-    <input type="text" id="name" placeholder="Your Name"><br>
-    <input type="text" id="mobile" placeholder="Mobile Number"><br>
-    <textarea id="msg" placeholder="Your Message"></textarea><br>
-    <button class="btn" onclick="sendWhatsApp()" id="sendBtn">Send on WhatsApp</button>
+<h2 id="title5">Apply Now</h2>
+
+<input type="text" id="userName" placeholder="Your Name"><br>
+<input type="text" id="mobile" placeholder="Mobile Number"><br>
+<textarea id="msg" placeholder="Your Message"></textarea><br>
+
+<button class="btn" onclick="sendWA()">Send on WhatsApp</button>
 </div>
 
 <!-- QR -->
 <div class="section">
-    <h3>Scan & Apply</h3>
-    <img src="images/qr.png" class="qr">
+<h3>Scan to Apply</h3>
+<img src="images/qr.png" class="qr">
 </div>
 
 <!-- LANGUAGE -->
 <div class="section">
-    <button class="btn" onclick="lang('en')">English</button>
-    <button class="btn" onclick="lang('od')">ଓଡ଼ିଆ</button>
+<button class="btn" onclick="lang('en')">English</button>
+<button class="btn" onclick="lang('od')">ଓଡ଼ିଆ</button>
+<button class="btn" onclick="lang('hi')">हिंदी</button>
 </div>
 
+<!-- FOOTER -->
 <footer id="footer">
-© LifePlus LIC Recruitment
+© LifePlus LIC Career Opportunity
 </footer>
 
-<!-- FLOATING BUTTON -->
+<!-- FLOATING WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/917978222099" target="_blank">💬</a>
 
 <script>
-function loadPhoto(e){
-    document.getElementById('preview').src = URL.createObjectURL(e.target.files[0]);
+function sendWA(){
+let name=document.getElementById("userName").value;
+let msg=name+" interested in LIC Career Opportunity";
+window.open("https://wa.me/917978222099?text="+encodeURIComponent(msg));
 }
 
-function sendWhatsApp(){
-    let name = document.getElementById('name').value;
-    let msg = name + " wants to join LIC";
-    window.open("https://wa.me/917978222099?text="+encodeURIComponent(msg));
-}
-
-/* COUNTER */
-function counter(id, target){
-let c=0;
-let i=setInterval(()=>{
-c++;
-document.getElementById(id).innerText=c+"+";
-if(c>=target) clearInterval(i);
-},20);
-}
-counter("agents",100);
-counter("exp",13);
-
-/* LANGUAGE */
+/* LANGUAGE SYSTEM */
 function lang(l){
+
 if(l=="od"){
-document.getElementById("why").innerText="LIC କାହିଁକି ଯୋଗଦିଅନ୍ତୁ?";
-document.getElementById("apply").innerText="ଆବେଦନ କରନ୍ତୁ";
-document.getElementById("sendBtn").innerText="WhatsApp ରେ ପଠାନ୍ତୁ";
-document.getElementById("agentsText").innerText="ସକ୍ରିୟ ଏଜେଣ୍ଟ";
-document.getElementById("expText").innerText="ବର୍ଷର ଅନୁଭବ";
-document.getElementById("footer").innerText="© LifePlus LIC ନିଯୁକ୍ତି";
+document.getElementById("title1").innerText="କ୍ୟାରିୟର ସୁଯୋଗ";
+document.getElementById("title2").innerText="କାର୍ଯ୍ୟ ସୁବିଧା";
+document.getElementById("title3").innerText="ସୁବିଧା (LIC ନିୟମ ଅନୁଯାୟୀ)";
+document.getElementById("title4").innerText="LIC କ୍ୟାରିୟର ବିଷୟରେ";
+document.getElementById("title5").innerText="ଏବେ ଆବେଦନ କରନ୍ତୁ";
+document.getElementById("footer").innerText="© LifePlus LIC କ୍ୟାରିୟର";
+document.getElementById("topbar").innerText="🚀 LIC କ୍ୟାରିୟର | ପାର୍ଟ ଟାଇମ / ଫୁଲ୍ ଟାଇମ / ଘରୁ କାମ";
 }
+
+else if(l=="hi"){
+document.getElementById("title1").innerText="करियर अवसर";
+document.getElementById("title2").innerText="कार्य विकल्प";
+document.getElementById("title3").innerText="लाभ (LIC नियम अनुसार)";
+document.getElementById("title4").innerText="LIC करियर के बारे में";
+document.getElementById("title5").innerText="अभी आवेदन करें";
+document.getElementById("footer").innerText="© LifePlus LIC करियर";
+document.getElementById("topbar").innerText="🚀 LIC करियर | पार्ट टाइम / फुल टाइम / घर से काम";
+}
+
 else{
-document.getElementById("why").innerText="Why Join LIC?";
-document.getElementById("apply").innerText="Apply Now";
-document.getElementById("sendBtn").innerText="Send on WhatsApp";
-document.getElementById("agentsText").innerText="Active Agents";
-document.getElementById("expText").innerText="Years Experience";
-document.getElementById("footer").innerText="© LifePlus LIC Recruitment";
+document.getElementById("title1").innerText="Career Opportunities";
+document.getElementById("title2").innerText="Work Flexibility";
+document.getElementById("title3").innerText="Benefits (As per LIC Rules)";
+document.getElementById("title4").innerText="About LIC Career";
+document.getElementById("title5").innerText="Apply Now";
+document.getElementById("footer").innerText="© LifePlus LIC Career Opportunity";
+document.getElementById("topbar").innerText="🚀 Join LIC Career | Work Part-Time / Full-Time / Work From Home / Field";
 }
 }
 </script>
