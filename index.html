@@ -14,7 +14,16 @@ font-family:Poppins;
 background:linear-gradient(-45deg,#6a0dad,#b266ff,#4b0082);
 color:white;
 }
-
+.profile-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid white;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  display:block;
+  margin:10px auto;
+}
 
 /* WATERMARK */
 body::before{
@@ -44,7 +53,7 @@ position:relative;
 
 /* HERO */
 <div class="hero">
-<img src="images/myphoto.jpg">
+<img src="images/myphoto.jpg" class="profile-img">
 <h1 id="name">Niranjan Sahu</h1>
 <p id="role">Senior Business Associate (LIC)</p>
 <p>📞 7978222099</p>
