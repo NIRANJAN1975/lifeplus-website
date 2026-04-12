@@ -169,17 +169,24 @@ input,textarea{width:90%;}
 </div>
 
 <!-- COUNTERS -->
-<div class="section">
-<div class="card">
-<div id="agents" class="counter">0</div>
-<p id="agentText">Active Agents</p>
-</div>
+function counter(id, target){
+let c = 0;
 
-<div class="card">
-<div id="exp" class="counter">0</div>
-<p id="expText">Years Experience</p>
-</div>
-</div>
+let i = setInterval(() => {
+c++;
+document.getElementById(id).innerText = c + "+";
+
+if(c >= target){
+clearInterval(i);
+document.getElementById(id).innerText = target + "+"; // FINAL FIX
+}
+}, 30);
+}
+
+window.onload = function(){
+counter("agents",100);
+counter("exp",13);
+}
 
 <!-- MARKETING CAREER SECTION -->
 <div class="marketing">
