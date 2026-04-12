@@ -44,33 +44,33 @@ z-index:2;
 /* HERO */
 .hero{
 text-align:center;
-padding:30px;
+padding:25px;
 position:relative;
 z-index:2;
 }
 
 .hero img{
-width:160px;
-height:160px;
+width:150px;
+height:150px;
 border-radius:50%;
 border:5px solid white;
 }
 
-.hero h1{margin:10px 0;}
+.hero h1{margin:10px 0 5px;}
 
-/* SECTIONS */
+/* SECTION */
 .section{
-padding:30px;
+padding:25px;
 text-align:center;
 position:relative;
 z-index:2;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 display:inline-block;
 background:rgba(255,255,255,0.12);
-padding:18px;
+padding:15px;
 margin:10px;
 border-radius:15px;
 width:220px;
@@ -83,11 +83,26 @@ color:purple;
 padding:12px 20px;
 border:none;
 border-radius:25px;
+font-weight:bold;
 cursor:pointer;
+}
+
+/* INPUT */
+input,textarea{
+width:80%;
+padding:10px;
+margin:8px;
+border:none;
+border-radius:5px;
+}
+
+/* COUNTER */
+.counter{
+font-size:40px;
 font-weight:bold;
 }
 
-/* FLOATING WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -113,11 +128,18 @@ text-align:center;
 padding:20px;
 background:#2e0057;
 }
+
+/* MOBILE FIX */
+@media(max-width:600px){
+.card{width:90%;}
+input,textarea{width:90%;}
+}
 </style>
 </head>
 
 <body>
 
+<!-- TOP -->
 <div class="topbar" id="topbar">
 🚀 Join LIC Career | Work Part-Time / Full-Time / Work From Home / Field
 </div>
@@ -130,53 +152,53 @@ background:#2e0057;
 <p>📞 7978222099</p>
 </div>
 
-<!-- OPTIONS -->
+<!-- COUNTERS -->
+<div class="section">
+<div class="card">
+<div id="agents" class="counter">0</div>
+<p id="agentText">Active Agents</p>
+</div>
+
+<div class="card">
+<div id="exp" class="counter">0</div>
+<p id="expText">Years Experience</p>
+</div>
+</div>
+
+<!-- OPPORTUNITIES -->
 <div class="section">
 <h2 id="title1">Career Opportunities</h2>
-
 <div class="card">🏡 Rural Agents</div>
 <div class="card">🏙️ City Agents</div>
 <div class="card">👩‍💼 Bima Sakhi</div>
 <div class="card">🏆 MDRT Aspirants</div>
 </div>
 
-<!-- WORK OPTIONS -->
+<!-- WORK -->
 <div class="section">
 <h2 id="title2">Work Flexibility</h2>
-
-<div class="card">Part Time Work</div>
-<div class="card">Full Time Career</div>
+<div class="card">Part Time</div>
+<div class="card">Full Time</div>
 <div class="card">Work From Home</div>
 <div class="card">Field Work</div>
 </div>
 
 <!-- BENEFITS -->
 <div class="section">
-<h2 id="title3">Benefits (As per LIC Rules)</h2>
+<h2 id="title3">Benefits (LIC Career)</h2>
 
-<div class="card">💰 Unlimited Income Opportunity</div>
-<div class="card">📈 Growth Based Commission</div>
-<div class="card">🎓 Training & Development</div>
-<div class="card">🏥 Group Insurance / Mediclaim (Eligibility)</div>
-<div class="card">🎉 Festival & Advance Facilities (As applicable)</div>
-<div class="card">🚗 Loan Facilities (Car/Bike/Housing - Eligibility)</div>
-<div class="card">🏆 MDRT Recognition Opportunity</div>
+<div class="card">💰 Unlimited Income</div>
+<div class="card">📈 Growth Opportunity</div>
+<div class="card">🎓 Training Support</div>
+<div class="card">🏥 Insurance Facility</div>
+<div class="card">🚗 Loan Eligibility</div>
+<div class="card">🏆 MDRT Opportunity</div>
 <div class="card">👨‍👩‍👧 Social Status Growth</div>
-<div class="card">💼 Hereditary Commission (As per rules)</div>
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-<h2 id="title4">About LIC Career</h2>
-<p>
-A powerful career opportunity with <b>LIC of India</b> for individuals who want
-financial independence, flexible working, and long-term growth.
-</p>
 </div>
 
 <!-- APPLY -->
 <div class="section">
-<h2 id="title5">Apply Now</h2>
+<h2 id="title4">Apply Now</h2>
 
 <input type="text" id="userName" placeholder="Your Name"><br>
 <input type="text" id="mobile" placeholder="Mobile Number"><br>
@@ -187,7 +209,7 @@ financial independence, flexible working, and long-term growth.
 
 <!-- QR -->
 <div class="section">
-<h3>Scan to Apply</h3>
+<h3>Scan QR to Apply</h3>
 <img src="images/qr.png" class="qr">
 </div>
 
@@ -203,47 +225,79 @@ financial independence, flexible working, and long-term growth.
 © LifePlus LIC Career Opportunity
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 <a class="whatsapp" href="https://wa.me/917978222099" target="_blank">💬</a>
 
 <script>
+
+/* COUNTERS */
+function counter(id,target){
+let c=0;
+let i=setInterval(()=>{
+c++;
+document.getElementById(id).innerText=c+"+";
+if(c>=target) clearInterval(i);
+},20);
+}
+counter("agents",100);
+counter("exp",13);
+
+/* WHATSAPP */
 function sendWA(){
 let name=document.getElementById("userName").value;
-let msg=name+" interested in LIC Career Opportunity";
+let msg="Hello, I am "+name+" interested in LIC Career Opportunity";
 window.open("https://wa.me/917978222099?text="+encodeURIComponent(msg));
 }
 
-/* LANGUAGE SYSTEM */
+/* LANGUAGE FIXED */
 function lang(l){
 
 if(l=="od"){
+document.getElementById("topbar").innerText="🚀 LIC କ୍ୟାରିୟର | ପାର୍ଟ ଟାଇମ / ଫୁଲ୍ ଟାଇମ / ଘରୁ କାମ / ଫିଲ୍ଡ";
+document.getElementById("name").innerText="ନିରଞ୍ଜନ ସାହୁ";
+document.getElementById("role").innerText="ସିନିଅର ବିଜନେସ ଆସୋସିଏଟ (LIC)";
 document.getElementById("title1").innerText="କ୍ୟାରିୟର ସୁଯୋଗ";
 document.getElementById("title2").innerText="କାର୍ଯ୍ୟ ସୁବିଧା";
-document.getElementById("title3").innerText="ସୁବିଧା (LIC ନିୟମ ଅନୁଯାୟୀ)";
-document.getElementById("title4").innerText="LIC କ୍ୟାରିୟର ବିଷୟରେ";
-document.getElementById("title5").innerText="ଏବେ ଆବେଦନ କରନ୍ତୁ";
+document.getElementById("title3").innerText="LIC କ୍ୟାରିୟର ସୁବିଧା";
+document.getElementById("title4").innerText="ଏବେ ଆବେଦନ କରନ୍ତୁ";
 document.getElementById("footer").innerText="© LifePlus LIC କ୍ୟାରିୟର";
-document.getElementById("topbar").innerText="🚀 LIC କ୍ୟାରିୟର | ପାର୍ଟ ଟାଇମ / ଫୁଲ୍ ଟାଇମ / ଘରୁ କାମ";
+document.getElementById("agentText").innerText="ସକ୍ରିୟ ଏଜେଣ୍ଟ";
+document.getElementById("expText").innerText="ବର୍ଷ ଅନୁଭବ";
+document.getElementById("userName").placeholder="ଆପଣଙ୍କ ନାମ";
+document.getElementById("mobile").placeholder="ମୋବାଇଲ ନମ୍ବର";
+document.getElementById("msg").placeholder="ଆପଣଙ୍କ ବାର୍ତ୍ତା";
 }
 
 else if(l=="hi"){
+document.getElementById("topbar").innerText="🚀 LIC करियर | पार्ट टाइम / फुल टाइम / घर से काम / फील्ड";
+document.getElementById("name").innerText="निरंजन साहू";
+document.getElementById("role").innerText="सीनियर बिजनेस एसोसिएट (LIC)";
 document.getElementById("title1").innerText="करियर अवसर";
 document.getElementById("title2").innerText="कार्य विकल्प";
-document.getElementById("title3").innerText="लाभ (LIC नियम अनुसार)";
-document.getElementById("title4").innerText="LIC करियर के बारे में";
-document.getElementById("title5").innerText="अभी आवेदन करें";
+document.getElementById("title3").innerText="LIC करियर लाभ";
+document.getElementById("title4").innerText="अभी आवेदन करें";
 document.getElementById("footer").innerText="© LifePlus LIC करियर";
-document.getElementById("topbar").innerText="🚀 LIC करियर | पार्ट टाइम / फुल टाइम / घर से काम";
+document.getElementById("agentText").innerText="Active Agents";
+document.getElementById("expText").innerText="Years Experience";
+document.getElementById("userName").placeholder="Your Name";
+document.getElementById("mobile").placeholder="Mobile Number";
+document.getElementById("msg").placeholder="Your Message";
 }
 
 else{
+document.getElementById("topbar").innerText="🚀 Join LIC Career | Work Part-Time / Full-Time / Work From Home / Field";
+document.getElementById("name").innerText="Niranjan Sahu";
+document.getElementById("role").innerText="Senior Business Associate (LIC)";
 document.getElementById("title1").innerText="Career Opportunities";
 document.getElementById("title2").innerText="Work Flexibility";
-document.getElementById("title3").innerText="Benefits (As per LIC Rules)";
-document.getElementById("title4").innerText="About LIC Career";
-document.getElementById("title5").innerText="Apply Now";
+document.getElementById("title3").innerText="Benefits (LIC Career)";
+document.getElementById("title4").innerText="Apply Now";
 document.getElementById("footer").innerText="© LifePlus LIC Career Opportunity";
-document.getElementById("topbar").innerText="🚀 Join LIC Career | Work Part-Time / Full-Time / Work From Home / Field";
+document.getElementById("agentText").innerText="Active Agents";
+document.getElementById("expText").innerText="Years Experience";
+document.getElementById("userName").placeholder="Your Name";
+document.getElementById("mobile").placeholder="Mobile Number";
+document.getElementById("msg").placeholder="Your Message";
 }
 }
 </script>
