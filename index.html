@@ -19,14 +19,16 @@ overflow-x:hidden;
 
 /* HERO */
 .hero{
-height:220px;
+height:240px;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
 background:linear-gradient(270deg,#6a0dad,#ffcc00,#4b0082);
 background-size:600% 600%;
 animation:move 8s ease infinite;
+padding:10px;
 }
 
 @keyframes move{
@@ -45,6 +47,12 @@ border:5px solid white;
 display:block;
 margin:-70px auto 10px auto;
 box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* HEADLINE */
+.headline{
+text-align:center;
+padding:10px 20px;
 }
 
 /* SECTION */
@@ -127,11 +135,22 @@ animation:pulse 2s infinite;
 100%{transform:scale(1)}
 }
 
+/* LANGUAGE */
+.lang button{
+margin:5px;
+padding:8px 15px;
+border:none;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
 /* FOOTER */
 footer{
 text-align:center;
 padding:20px;
 background:#0f0f2a;
+margin-top:20px;
 }
 
 @media(max-width:600px){
@@ -146,7 +165,8 @@ input,textarea{width:90%;}
 
 <!-- HERO -->
 <div class="hero">
-<h1>🚀 LIC Recruitment SaaS Portal</h1>
+<h1 id="heroTitle">🚀 LIC Recruitment Portal</h1>
+<p>Build Your Future With LIC</p>
 </div>
 
 <!-- PROFILE -->
@@ -155,6 +175,17 @@ input,textarea{width:90%;}
 <h2 id="name">Niranjan Sahu</h2>
 <p>Senior Business Associate (LIC)</p>
 <p>📞 7978222099</p>
+</div>
+
+<!-- HEADLINE -->
+<div class="headline">
+<h1 id="headline" style="color:#ffcc00;">
+Become a Life Insurance Advisor: Build a Career with Unlimited Potential
+</h1>
+
+<p id="subheadline">
+Join a prestigious team and earn the freedom to work on your own terms while helping families secure their future.
+</p>
 </div>
 
 <!-- DASHBOARD -->
@@ -182,26 +213,57 @@ input,textarea{width:90%;}
 
 </div>
 
-<!-- ADMIN PANEL -->
+<!-- BENEFITS -->
+<div class="section">
+<h2 id="whylic">🌟 Why Join LIC?</h2>
+<div class="card">💰 Unlimited Income</div>
+<div class="card">⏰ Flexible Timing</div>
+<div class="card">🏛 Trusted Brand</div>
+<div class="card">🏦 Pension Benefits</div>
+</div>
+
+<!-- UNIT -->
+<div class="section">
+<h2 id="whyunit">🤝 Why Join Our Unit?</h2>
+<div class="card">🎓 Training Support</div>
+<div class="card">📚 IRDAI Exam Help</div>
+<div class="card">📢 Digital Marketing Support</div>
+<div class="card">🏆 Growth Culture</div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="section">
+<h2 id="eligibility">📌 Eligibility & Process</h2>
+<div class="card">🎓 10th / 12th Pass</div>
+<div class="card">🎂 Age 18+</div>
+<div class="card">1️⃣ Registration</div>
+<div class="card">2️⃣ Training</div>
+<div class="card">3️⃣ Exam</div>
+</div>
+
+<!-- ADMIN -->
 <div class="section admin">
 <h2>🛠 Admin Panel</h2>
-
 <input type="number" id="agentInput" placeholder="Update Agents">
 <input type="number" id="expInput" placeholder="Update Experience">
-
 <br>
-<button class="btn" onclick="updateAdmin()">Update Dashboard</button>
+<button class="btn" onclick="updateAdmin()">Update</button>
 </div>
 
 <!-- APPLY -->
 <div class="section">
 <h2>Apply Now</h2>
-
 <input type="text" id="userName" placeholder="Your Name"><br>
 <input type="text" id="mobile" placeholder="Mobile Number"><br>
 <textarea placeholder="Message"></textarea><br>
-
 <button class="btn" onclick="sendWA()">Send WhatsApp</button>
+</div>
+
+<!-- LANGUAGE -->
+<div class="section lang">
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('hi')">हिंदी</button>
+<button onclick="setLang('od')">ଓଡ଼ିଆ</button>
 </div>
 
 <!-- FLOAT DOCK -->
@@ -211,58 +273,69 @@ input,textarea{width:90%;}
 </div>
 
 <!-- FOOTER -->
-<footer>
-© LIC Recruitment SaaS Portal
-</footer>
+<footer>© LIC Recruitment SaaS Portal</footer>
 
 <script>
 
-/* SAFE INITIALIZATION */
+/* TRACKING */
 window.onload=function(){
 
-/* VISITS */
-let v = Number(localStorage.getItem("visits") || 0);
+let v=Number(localStorage.getItem("visits")||0);
 v++;
-localStorage.setItem("visits", v);
-document.getElementById("visits").innerText = v;
+localStorage.setItem("visits",v);
+document.getElementById("visits").innerText=v;
 
-/* CLICK TRACK */
-let c = Number(localStorage.getItem("clicks") || 0);
+let c=Number(localStorage.getItem("clicks")||0);
 
-document.body.addEventListener("click", function(e){
-if(e.target.tagName === "BUTTON" || e.target.tagName === "A"){
+document.body.addEventListener("click",function(e){
+if(e.target.tagName==="BUTTON"||e.target.tagName==="A"){
 c++;
-localStorage.setItem("clicks", c);
-document.getElementById("clicks").innerText = c;
+localStorage.setItem("clicks",c);
+document.getElementById("clicks").innerText=c;
 }
 });
 
-document.getElementById("clicks").innerText = c;
+document.getElementById("clicks").innerText=c;
 
 };
 
-/* ADMIN UPDATE */
+/* ADMIN */
 function updateAdmin(){
-
 let ag=document.getElementById("agentInput").value;
 let ex=document.getElementById("expInput").value;
 
-if(ag!==""){
-document.getElementById("agents").innerText=ag+"+";
-}
+if(ag!=="") document.getElementById("agents").innerText=ag+"+";
+if(ex!=="") document.getElementById("exp").innerText=ex+"+";
 
-if(ex!==""){
-document.getElementById("exp").innerText=ex+"+";
-}
-
-alert("Dashboard Updated Successfully");
+alert("Updated Successfully");
 }
 
 /* WHATSAPP */
 function sendWA(){
 let name=document.getElementById("userName").value;
-let msg="Hello, I am "+name+" interested in LIC Recruitment";
+let msg="Hello I am "+name+" interested in LIC Recruitment";
 window.open("https://wa.me/917978222099?text="+encodeURIComponent(msg));
+}
+
+/* LANGUAGE SYSTEM */
+function setLang(l){
+
+if(l==="en"){
+location.reload();
+}
+
+if(l==="hi"){
+document.getElementById("heroTitle").innerText="🚀 LIC करियर पोर्टल";
+document.getElementById("headline").innerText="बीमा सलाहकार बनें - असीमित कमाई अवसर";
+document.getElementById("subheadline").innerText="स्वतंत्रता के साथ काम करें और परिवारों की मदद करें";
+}
+
+if(l==="od"){
+document.getElementById("heroTitle").innerText="🚀 LIC କ୍ୟାରିୟର ପୋର୍ଟାଲ";
+document.getElementById("headline").innerText="ଲାଇଫ୍ ଇନ୍ସୁରେନ୍ସ ଆଡଭାଇଜର - ଅସୀମ ଆୟ ସୁଯୋଗ";
+document.getElementById("subheadline").innerText="ସ୍ୱାଧୀନତା ସହିତ କାମ କରନ୍ତୁ ଏବଂ ପରିବାର ସୁରକ୍ଷା କରନ୍ତୁ";
+}
+
 }
 
 </script>
