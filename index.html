@@ -3,357 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Plus | LIC Recruitment Centre</title>
+<title>LifePlus LIC Recruitment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
-
-body{
-background:linear-gradient(135deg,#2a0055,#5a189a,#7b2cbf);
-color:white;
-overflow-x:hidden;
+body {
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #6a0dad, #b266ff, #4b0082);
+    color:white;
 }
 
-/* BACKGROUND WATERMARK */
-body::before{
-content:"";
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
-background-size:cover;
-opacity:0.07;
-z-index:-1;
+/* WATERMARK */
+body::before {
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:300px;
+    height:300px;
+    background:url('images/lic-logo.png') no-repeat center;
+    background-size:contain;
+    opacity:0.08;
+    transform:translate(-50%, -50%);
 }
 
-/* NAV */
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 20px;
-z-index:1000;
+/* TOP BAR */
+.topbar {
+    background:yellow;
+    color:black;
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
 }
 
-/* NAV LINKS */
-nav a{
-color:white;
-margin:8px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
+/* BANNER */
+.banner {
+    text-align:center;
+    padding:30px;
+}
+.banner img {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:5px solid white;
 }
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-flex-direction:column;
-position:relative;
-padding:20px;
+/* SECTION */
+.section {
+    padding:30px;
+    text-align:center;
 }
 
-/* HERO VIDEO */
-.hero video{
-position:absolute;
-top:0;left:0;
-width:100%;height:100%;
-object-fit:cover;
-z-index:-2;
-opacity:0.35;
+/* CARD */
+.card {
+    display:inline-block;
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    margin:10px;
+    border-radius:15px;
 }
 
-/* PROFILE CARD */
-.profile{
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(15px);
-padding:25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.2);
-margin-bottom:20px;
-}
-
-.profile img{
-width:120px;
-height:120px;
-border-radius:50%;
-border:3px solid gold;
-object-fit:cover;
-}
-
-.profile h2{margin-top:10px;}
-
-.profile a{
-color:#ffd700;
-text-decoration:none;
-font-weight:bold;
+/* COUNTER */
+.counter {
+    font-size:40px;
+    font-weight:bold;
 }
 
 /* BUTTON */
-.btn{
-background:#ffd700;
-color:black;
-padding:12px 25px;
-border-radius:30px;
-font-weight:bold;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-transition:0.3s;
+.btn {
+    background:white;
+    color:purple;
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
 }
-
-.btn:hover{transform:scale(1.1);}
-
-/* SECTION */
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-padding:25px;
-border-radius:15px;
-transition:0.3s;
-}
-
-.card:hover{transform:translateY(-10px);}
 
 /* FORM */
-form{
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(15px);
-max-width:420px;
-margin:auto;
-padding:25px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.2);
+input, textarea {
+    width:80%;
+    padding:10px;
+    margin:10px;
+    border-radius:5px;
+    border:none;
 }
 
-input,select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:none;
-outline:none;
+/* FLOATING WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
 }
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
-color:white;
+/* QR */
+.qr {
+    width:120px;
+    margin-top:10px;
 }
 
-/* STICKY BUTTON */
-.sticky{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#ffd700;
-color:black;
-padding:12px 18px;
-border-radius:30px;
-font-weight:bold;
-z-index:9999;
-text-decoration:none;
-}
-
-/* LANGUAGE */
-.lang{
-position:fixed;
-top:80px;
-right:10px;
-z-index:9999;
-background:rgba(0,0,0,0.3);
-padding:10px;
-border-radius:10px;
-backdrop-filter:blur(10px);
-}
-
-.lang button{
-margin:3px;
-padding:6px 10px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:rgba(0,0,0,0.3);
-text-align:center;
-padding:20px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(-20px);}
-to{opacity:1;transform:translateY(0);}
+footer {
+    background:#2e0057;
+    padding:20px;
+    text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LANGUAGE -->
-<div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('hi')">HI</button>
-<button onclick="setLang('od')">OD</button>
+<div class="topbar">
+🚀 Join LIC Today | Unlimited Income Opportunity
 </div>
 
-<!-- STICKY APPLY -->
-<a href="#apply" class="sticky">🚀 Apply Now</a>
+<div class="banner">
+    <img id="preview" src="images/myphoto.jpg">
+    <h1 id="nameTitle">Niranjan Sahu</h1>
+    <p>Senior Business Associate (LIC)</p>
+    <p>📞 7978222099</p>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/917978222099">💬</a>
-
-<!-- NAV -->
-<header>
-<h3>Life Plus</h3>
-<nav>
-<a href="#about">About</a>
-<a href="#opp">Opportunities</a>
-<a href="#apply">Apply</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-
-<video autoplay muted loop>
-<source src="https://cdn.pixabay.com/video/2023/03/27/156509-813497669_large.mp4">
-</video>
-
-<div class="profile">
-<img src="niranjan.jpg">
-<h2>👨‍💼 Niranjan Sahu</h2>
-<p>Senior Business Associate (LIC)</p>
-<a href="tel:7978222099">📞 7978222099</a>
+    <input type="file" onchange="loadPhoto(event)" class="btn">
 </div>
 
-<h1 id="title">Build Your Career with LIC</h1>
-<p id="subtitle">Agent • RCA • Bima Sakhi Recruitment Portal</p>
-
-<a href="#apply" class="btn">Apply Now</a>
-
-</section>
-
-<!-- TRUST -->
-<section>
-<div class="grid">
-<div class="card">👨‍💼 13+ Years Experience</div>
-<div class="card">👥 100+ Agents Team</div>
-<div class="card">🏆 LIC Trusted Guidance</div>
-</div>
-</section>
-
-<!-- OPPORTUNITIES -->
-<section id="opp">
-<h2>💼 Opportunities</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>LIC Agent</h3>
-<p>Unlimited income & lifetime commission.</p>
+<!-- COUNTERS -->
+<div class="section">
+    <div class="card">
+        <div id="agents" class="counter">0</div>
+        <p id="agentsText">Active Agents</p>
+    </div>
+    <div class="card">
+        <div id="exp" class="counter">0</div>
+        <p id="expText">Years Experience</p>
+    </div>
 </div>
 
-<div class="card">
-<h3>RCA</h3>
-<p>Rural career growth opportunity.</p>
+<!-- WHY JOIN -->
+<div class="section">
+    <h2 id="why">Why Join LIC?</h2>
+    <div class="card">💰 Unlimited Income</div>
+    <div class="card">⏰ Flexible Work</div>
+    <div class="card">📈 High Growth</div>
+    <div class="card">🔒 Secure Future</div>
 </div>
-
-<div class="card">
-<h3>Bima Sakhi</h3>
-<p>Women empowerment program.</p>
-</div>
-
-</div>
-</section>
 
 <!-- APPLY -->
-<section id="apply">
-<h2>📩 Apply Now</h2>
+<div class="section">
+    <h2 id="apply">Apply Now</h2>
+    <input type="text" id="name" placeholder="Your Name"><br>
+    <input type="text" id="mobile" placeholder="Mobile Number"><br>
+    <textarea id="msg" placeholder="Your Message"></textarea><br>
+    <button class="btn" onclick="sendWhatsApp()" id="sendBtn">Send on WhatsApp</button>
+</div>
 
-<form onsubmit="sendLead(); return false;">
-<input type="text" id="name" placeholder="Name" required>
-<input type="text" id="phone" placeholder="Phone" required>
+<!-- QR -->
+<div class="section">
+    <h3>Scan & Apply</h3>
+    <img src="images/qr.png" class="qr">
+</div>
 
-<select id="role">
-<option>LIC Agent</option>
-<option>RCA</option>
-<option>Bima Sakhi</option>
-</select>
+<!-- LANGUAGE -->
+<div class="section">
+    <button class="btn" onclick="lang('en')">English</button>
+    <button class="btn" onclick="lang('od')">ଓଡ଼ିଆ</button>
+</div>
 
-<button class="btn">Submit</button>
-</form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<p>Life Plus Recruitment | 7978222099</p>
+<footer id="footer">
+© LifePlus LIC Recruitment
 </footer>
 
+<!-- FLOATING BUTTON -->
+<a class="whatsapp" href="https://wa.me/917978222099" target="_blank">💬</a>
+
 <script>
-
-/* LEAD */
-function sendLead(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let role=document.getElementById("role").value;
-
-let msg="New Lead:%0AName:"+name+"%0APhone:"+phone+"%0ARole:"+role;
-
-window.open("https://wa.me/917978222099?text="+msg);
-alert("Submitted Successfully");
+function loadPhoto(e){
+    document.getElementById('preview').src = URL.createObjectURL(e.target.files[0]);
 }
 
-/* MULTI LANGUAGE */
-function setLang(lang){
-
-if(lang==="hi"){
-document.getElementById("title").innerText="LIC के साथ अपना करियर बनाएं";
-document.getElementById("subtitle").innerText="एजेंट • RCA • बीमा सखी भर्ती";
+function sendWhatsApp(){
+    let name = document.getElementById('name').value;
+    let msg = name + " wants to join LIC";
+    window.open("https://wa.me/917978222099?text="+encodeURIComponent(msg));
 }
 
-if(lang==="od"){
-document.getElementById("title").innerText="LIC ସହିତ ଆପଣଙ୍କ କ୍ୟାରିୟର ଗଢ଼ନ୍ତୁ";
-document.getElementById("subtitle").innerText="ଏଜେଣ୍ଟ • RCA • ବୀମା ସଖୀ";
+/* COUNTER */
+function counter(id, target){
+let c=0;
+let i=setInterval(()=>{
+c++;
+document.getElementById(id).innerText=c+"+";
+if(c>=target) clearInterval(i);
+},20);
 }
+counter("agents",100);
+counter("exp",13);
 
-if(lang==="en"){
-location.reload();
+/* LANGUAGE */
+function lang(l){
+if(l=="od"){
+document.getElementById("why").innerText="LIC କାହିଁକି ଯୋଗଦିଅନ୍ତୁ?";
+document.getElementById("apply").innerText="ଆବେଦନ କରନ୍ତୁ";
+document.getElementById("sendBtn").innerText="WhatsApp ରେ ପଠାନ୍ତୁ";
+document.getElementById("agentsText").innerText="ସକ୍ରିୟ ଏଜେଣ୍ଟ";
+document.getElementById("expText").innerText="ବର୍ଷର ଅନୁଭବ";
+document.getElementById("footer").innerText="© LifePlus LIC ନିଯୁକ୍ତି";
+}
+else{
+document.getElementById("why").innerText="Why Join LIC?";
+document.getElementById("apply").innerText="Apply Now";
+document.getElementById("sendBtn").innerText="Send on WhatsApp";
+document.getElementById("agentsText").innerText="Active Agents";
+document.getElementById("expText").innerText="Years Experience";
+document.getElementById("footer").innerText="© LifePlus LIC Recruitment";
 }
 }
-
 </script>
 
 </body>
